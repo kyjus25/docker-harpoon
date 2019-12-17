@@ -6,13 +6,13 @@ if [ "$(docker ps -a -q)" != "" ]; then
 	docker rm $(docker ps -a -q)
 fi
 
-#Remove Images
+# Remove Images
 if [ "$(docker image list -a -q)" != "" ]; then
 	docker image stop $(docker image list -a -q) --force
 	docker image rm $(docker image list -a -q) --force
 fi
 
-#Remove Volumes
+# Remove Volumes
 if [ "$(docker volume list -q)" != "" ]; then
 	docker volume stop $(docker volume list -q) --force
 	docker volume rm $(docker volume list -q) --force
